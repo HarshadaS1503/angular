@@ -1,0 +1,43 @@
+<div class="card">
+    <div class="card-header">
+    <h3 style="text-align:center">
+        Home Component
+    </h3>
+    </div>
+
+
+    <div class="card-body">
+
+        <p>Employee ID: {{ empid }}</p>
+        <p>Employee Name: {{ empname }}</p>
+        <p>Employee Details: {{GetDetails()}}</p>
+        <p> Employee Profile pic:</p>
+        <img src="{{ imgpath }}"/>
+
+        <p>Employee ID: <input type="text" [(ngModel)]="empid"></p>
+        <p>Employee Name: <input type="text" [(ngModel)]="empname"></p>
+
+        <button class="btn btn-primary" (click)="ShowAlert()">
+            Show alert
+        </button>
+
+        
+        &nbsp;
+
+        <button class="btn btn-secondary" (click)="ChangeEmployee($event)">
+            Change Employee
+        </button>
+
+        &nbsp;
+
+        <button class="btn btn-info" on-click="ClickMe()" >
+            Click Me !
+        </button>
+
+        <h5>No of Clicks: {{ clickCount }}</h5>
+        
+    </div>
+
+</div>
+
+  

@@ -1,0 +1,76 @@
+export: access specifier which is used to expose the classs to whole project 
+
+@component: the class will behave as a component
+ --selector : html tag representation seen in index.html
+
+component class: <componentname>.component.ts
+
+root component: app.component.ts
+
+root component template view: app.component.html
+
+
+ng g c <componentname>  --flat  (folder is not created of the component)
+
+// how to apply global css style like bootstrap to entire project
+
+npm install --save bootstrap
+
+den in style.css
+
+use 
+@import '../node_modules/bootstrap/dist/css/bootstrap.css';
+
+//to change the port only
+s
+ng serve --host 0.0.0.0 --port 5000
+
+ANGULAR DATA BINDING
+
+//one way binding
+--component to view
+
+//two way binding
+--component to view
+--view to component
+
+//ngModel -a directive used to acheive two way data binding
+
+eg: <input type="text" [(ngModel)]="name">
+
+for this mention 
+
+import { FormsModule } from '@angular/forms'; in app.module.ts
+formsmodule in imports section
+
+--define property in ts component.ts file in class
+--use [(ngModel)]= "propertyname" in html
+--use FormModule in app.module.ts
+
+//binding img
+
+<img src="{{ img path }}"/>
+
+//Event binding
+
+<button (click)="functionName" ></button>
+
+
+//$event
+
+in html
+
+<button class="btn btn-secondary" (click)="ChangeEmployee($event)">
+
+in component.ts
+
+changeEmployee(event:any):void
+{
+  console.log(event.target)
+}
+
+//template reference variable
+
+reference a portion of template in another template
+
+eg: employee model (name,id,imgpath)==>adding city to this w/o modifying as template reference variable
