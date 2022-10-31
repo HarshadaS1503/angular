@@ -1,0 +1,15 @@
+<p>Input from Square Component</p>
+<div>
+   Enter the Number: <input type="text" id="no"  [(ngModel)]="inputnumber">
+</div>
+   <br>
+<div>
+<app-square-result [outputnumber] ="inputnumber" (emitData)="receiveData($event)"></app-square-result>
+</div>
+
+
+<div>
+   <select>
+      <option *ngFor="let r of resultarray">{{r}}</option>
+   </select>
+</div>

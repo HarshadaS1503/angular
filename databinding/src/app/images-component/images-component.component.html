@@ -1,0 +1,20 @@
+
+
+<h5>Social Media Icons</h5>
+<div class="form-group">
+<select id="imglst" [(ngModel)]="selectedvalue" (change)="onChange(selectedvalue)">
+    <option selected>--Select--</option>
+    <option *ngFor="let img of imglist" [value]="img.id">
+     {{img.name}}
+    </option>
+</select>
+   <br>
+   <div *ngIf="derivedPath === '' || derivedPath == undefined ;else imagefound">
+ <p> No image found</p>
+</div>
+<ng-template #imagefound>
+    
+<img [src]="derivedPath" width="152" height="152" style="vertical-align:middle;margin:50px 0px">
+</ng-template>
+   
+</div>
