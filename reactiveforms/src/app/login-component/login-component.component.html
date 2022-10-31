@@ -1,17 +1,33 @@
-
+<form [formGroup]="signInForm" (ngSubmit)='OnSubmit()'>
 <div class="text-center">
 <h3 >Reactive Forms</h3>
 </div>
 <br>
 
 <div class="text-center">
-    <h4>Username: <input type="text"></h4>
+    <h4>Username: <input type="text" formControlName="username" (blur)="log()"></h4>
+    <span *ngIf="!signInForm.get('username').valid && signInForm.get('username').touched">
+        Please enter valid username !
+  </span>
+<!-- -->
 </div>
-
+<br>
 <div class="text-center">
-    <h4 >Password: <input type="password"></h4>
+    <h4 >Password: <input type="password"formControlName="password" (blur)="log()"></h4>
+    
+    <span *ngIf="!signInForm.get('password').valid && signInForm.get('password').touched">
+        Please enter valid password !
+  </span>
 </div>
-
+<br>
 <div class="text-center">
-    <button class="btn btn-primary">Sign In</button>
+   
+    <span *ngIf="!signInForm.valid && signInForm.touched">
+        Please enter valid data !
+  </span>
+  <br>
+    <button class="btn btn-primary" type="submit">Sign In</button>
+
+    
 </div>
+</form>
