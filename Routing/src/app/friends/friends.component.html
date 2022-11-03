@@ -1,0 +1,9 @@
+<div class="row">
+    <div class="col-xs-12 col-sm-4">
+        <div class="list-group">
+           <a *ngFor="let friend of friendslist" [routerLink]="['/friends',friend.name]">
+              {{friend.name}}
+           </a>
+        </div>
+</div>
+</div>

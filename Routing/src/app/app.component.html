@@ -1,0 +1,21 @@
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12">
+      <ul class="nav nav-tabs">
+          <li role="presentation" class="p-3">
+            <a [routerLink]="['/']">Home</a>
+          </li>
+          <li role="presentation" class="p-3" >
+            <a [routerLink]="['/friends']">Friends</a>
+          </li>
+          <li role="presentation" class="p-3">
+            <a  [routerLink]="['/downloads']">Downloads</a>
+          </li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<div  class="container">
+  <router-outlet></router-outlet>
+</div>

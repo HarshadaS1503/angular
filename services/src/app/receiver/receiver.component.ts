@@ -11,18 +11,19 @@ export class ReceiverComponent implements OnInit {
 
   msg_sender:string;
 
-  constructor(private senderservice:SenderService) { }
+  constructor(private senderservice:SenderService) {
+
+   }
 
   ngOnInit(): void {
 
-    this.senderservice.sendermsg.subscribe(
-        (msg_received:string)=>{
-          this.msg_sender=msg_received;
-        }
-    );
-
     
-    console.log('From receiver component: '+this.msg_sender);
   }
 
+  show()
+  {
+    
+    console.log("from receiver's constructor: "+this.senderservice.passDataToReceiver())
+    this.msg_sender=this.senderservice.passDataToReceiver();
+  }
 }

@@ -4,12 +4,21 @@ import { EventEmitter, Injectable } from "@angular/core";
  })
 export class SenderService
 { 
-   sendermsg:EventEmitter<string>=new EventEmitter<string>();
+   sendermsg:string;
 
 
-   sendMsgFromSender(msg:string)
+   sendMsgFromService(msg:string)
    {
-      console.log('From sender service: '+msg);
-      return this.sendermsg.emit(msg);
+      
+    console.log('sendMsgFromService: '+msg);
+    this.sendermsg=msg;
+    this.passDataToReceiver();
+   }
+
+   passDataToReceiver():string
+   {
+      
+    console.log('pass data : '+ this.sendermsg);
+      return this.sendermsg;
    }
 }
